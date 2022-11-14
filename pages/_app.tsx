@@ -3,6 +3,7 @@ import Head from 'next/head'
 import { ThemeProvider } from 'styled-components'
 import { GlobalStyle } from 'styles/global'
 import { theme } from 'styles/theme'
+import { SWRConfig } from 'swr'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -14,7 +15,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-        <Component {...pageProps} />
+        <SWRConfig value={{ suspense: true }}>
+          <Component {...pageProps} />
+        </SWRConfig>
       </ThemeProvider>
     </>
   )

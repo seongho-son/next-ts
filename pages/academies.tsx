@@ -1,8 +1,34 @@
-import { NextPage } from 'next'
 import React from 'react'
+import styled from 'styled-components'
+import { NextPage } from 'next'
+import { Column, Media } from 'styles/components/layout'
+import { H4Text } from 'styles/components/text'
+import { AcademiesList } from 'components/academy/academies-list'
+import { AcademiesListSkeleton } from 'components/common/skeleton'
 
-const AcademiesPage: NextPage = () => {
-  return <div>AcademiesPage</div>
+const Academies: NextPage = () => {
+  return (
+    <AcademiesMain>
+      <Media>
+        <Column style={{ gap: 20 }}>
+          <CategoryText>요즘 뜨는 아카데미</CategoryText>
+          <React.Suspense fallback={<AcademiesListSkeleton />}>
+            <AcademiesList />
+          </React.Suspense>
+        </Column>
+      </Media>
+    </AcademiesMain>
+  )
 }
 
-export default AcademiesPage
+const AcademiesMain = styled(Column)`
+  height: 100vh;
+  padding-top: 50px;
+  background-color: ${(p) => p.theme.color.background};
+`
+
+const CategoryText = styled(H4Text)`
+  font-weight: ${(p) => p.theme.weight.bold};
+`
+
+export default Academies

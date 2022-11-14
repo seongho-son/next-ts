@@ -5,7 +5,10 @@ export const GlobalStyle = createGlobalStyle`
   ${reset}
   html, body{
     height: 100%;
-  ${(p) => p.theme.media.desktop}{}
-  ${(p) => p.theme.media.mobile}{}
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; 
+    color: ${(p) => p.theme.color.black}
+    ${(p) => p.theme.media.desktop}{}
+    ${(p) => p.theme.media.mobile}{}
   }
 `
