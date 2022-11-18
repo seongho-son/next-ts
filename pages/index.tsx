@@ -1,7 +1,13 @@
+import { Seo } from 'components/seo'
 import type { NextPage } from 'next'
 
-const HomePage: NextPage = () => {
-  return <div>test</div>
+const Home: NextPage = () => {
+  return (
+    <div>
+      <Seo title='댄스 아카데미 플랫폼' description='home test' />
+      Home
+    </div>
+  )
 }
 
-export default HomePage
+export default Home

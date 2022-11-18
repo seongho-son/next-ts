@@ -1,8 +1,8 @@
 import React from 'react'
+import styled from 'styled-components'
 import { BaseText } from 'styles/components/text'
 import { Thumbnail } from 'components/common/image'
 import { useAcademies } from 'api/hook'
-import styled from 'styled-components'
 import { ShadowCard } from 'styles/components/card'
 import { Column } from 'styles/components/layout'
 

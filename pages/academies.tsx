@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Seo } from 'components/seo'
 import { NextPage } from 'next'
 import { Column, Media } from 'styles/components/layout'
 import { H4Text } from 'styles/components/text'
@@ -8,16 +9,19 @@ import { AcademiesListSkeleton } from 'components/common/skeleton'
 
 const Academies: NextPage = () => {
   return (
-    <AcademiesMain>
-      <Media>
-        <Column style={{ gap: 20 }}>
-          <CategoryText>요즘 뜨는 아카데미</CategoryText>
-          <React.Suspense fallback={<AcademiesListSkeleton />}>
-            <AcademiesList />
-          </React.Suspense>
-        </Column>
-      </Media>
-    </AcademiesMain>
+    <>
+      <Seo title='아카데미 찾기' description='academies test' />
+      <AcademiesMain>
+        <Media>
+          <Column style={{ gap: 20 }}>
+            <CategoryText>요즘 뜨는 아카데미</CategoryText>
+            <React.Suspense fallback={<AcademiesListSkeleton />}>
+              <AcademiesList />
+            </React.Suspense>
+          </Column>
+        </Media>
+      </AcademiesMain>
+    </>
   )
 }
 
