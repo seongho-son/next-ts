@@ -3,12 +3,20 @@ export interface IdName {
   name: string
 }
 
+export interface Image {
+  id: number
+  url: string
+}
+
+export type Category = IdName
+
 export interface Blog extends IdName {
-  intro: string
-  categories: IdName[]
-  location: string
-  address: string
+  subject: string
+  body: string
+  categories: Category[]
+  images: Image[]
+  createdAt: string
   thumbnail: string
-  images: string[]
-  closeAt: string
+  updatedAt: string
+  deletedAt: string
 }

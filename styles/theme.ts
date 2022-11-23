@@ -16,7 +16,7 @@ const size = {
 
 const color = {
   white: '#FFFFFF',
-  black: '#24273a',
+  black: '#141414',
   primary: '#513DE8',
   background: '#F2F5FB',
   gray: '#D9D9D9',

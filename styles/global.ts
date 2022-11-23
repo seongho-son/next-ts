@@ -7,7 +7,7 @@ export const GlobalStyle = createGlobalStyle`
     height: 100%;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif; 
-    color: ${(p) => p.theme.color.black}
+    color: #24273a;
     ${(p) => p.theme.media.desktop}{}
     ${(p) => p.theme.media.mobile}{}
   }
