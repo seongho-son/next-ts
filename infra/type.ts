@@ -3,7 +3,7 @@ export interface IdName {
   name: string
 }
 
-export interface Academies extends IdName {
+export interface Blog extends IdName {
   intro: string
   categories: IdName[]
   location: string

@@ -5,11 +5,11 @@ const nextConfig = {
   compiler: {
     styledComponents: true,
   },
-  experimental: {
-    images: {
-      remotePatterns: [{ hostname: '**', pathname: '**' }],
-    },
-  },
+  // experimental: {
+  //   images: {
+  //     remotePatterns: [{ hostname: '**', pathname: '**' }],
+  //   },
+  // },
 }
 
 module.exports = nextConfig

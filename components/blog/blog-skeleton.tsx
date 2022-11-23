@@ -3,10 +3,10 @@ import styled from 'styled-components'
 import { ShadowCard } from 'styles/components/card'
 import { Column, Row } from 'styles/components/layout'
 
-export const AcademiesListSkeleton: React.FC = () => {
+export const BlogListSkeleton: React.FC = () => {
   return (
-    <AcademiesList>
-      <AcademiesItem>
+    <BlogList>
+      <BlogItem>
         <Row style={{ gap: 20 }}>
           <ImageBox />
           <Column style={{ gap: 10 }}>
@@ -14,8 +14,8 @@ export const AcademiesListSkeleton: React.FC = () => {
             <TextBox />
           </Column>
         </Row>
-      </AcademiesItem>
-      <AcademiesItem>
+      </BlogItem>
+      <BlogItem>
         <Row style={{ gap: 20 }}>
           <ImageBox />
           <Column style={{ gap: 10 }}>
@@ -23,8 +23,8 @@ export const AcademiesListSkeleton: React.FC = () => {
             <TextBox />
           </Column>
         </Row>
-      </AcademiesItem>
-      <AcademiesItem>
+      </BlogItem>
+      <BlogItem>
         <Row style={{ gap: 20 }}>
           <ImageBox />
           <Column style={{ gap: 10 }}>
@@ -32,8 +32,8 @@ export const AcademiesListSkeleton: React.FC = () => {
             <TextBox />
           </Column>
         </Row>
-      </AcademiesItem>
-      <AcademiesItem>
+      </BlogItem>
+      <BlogItem>
         <Row style={{ gap: 20 }}>
           <ImageBox />
           <Column style={{ gap: 10 }}>
@@ -41,8 +41,8 @@ export const AcademiesListSkeleton: React.FC = () => {
             <TextBox />
           </Column>
         </Row>
-      </AcademiesItem>
-      <AcademiesItem>
+      </BlogItem>
+      <BlogItem>
         <Row style={{ gap: 20 }}>
           <ImageBox />
           <Column style={{ gap: 10 }}>
@@ -50,16 +50,16 @@ export const AcademiesListSkeleton: React.FC = () => {
             <TextBox />
           </Column>
         </Row>
-      </AcademiesItem>
-    </AcademiesList>
+      </BlogItem>
+    </BlogList>
   )
 }
 
-const AcademiesList = styled(Column)`
+const BlogList = styled(Column)`
   gap: 20px;
 `
 
-const AcademiesItem = styled(ShadowCard)`
+const BlogItem = styled(ShadowCard)`
   flex-direction: row;
   padding: 30px;
   background-color: ${(p) => p.theme.color.white};

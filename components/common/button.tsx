@@ -20,6 +20,7 @@ export const Button: React.FC<ButtonProps> = (props) => {
 }
 
 const ButtonMain = styled(Row)`
+  flex: 1;
   transition: 0.2s;
   padding: 15px 20px;
   border-radius: 50px;

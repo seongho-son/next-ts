@@ -7,10 +7,11 @@ interface ThumbnailProps {
   height: number
   alt?: string
   layout?: 'fixed' | 'fill' | 'intrinsic' | 'responsive' | undefined
+  priority?: boolean
 }
 
 export const Thumbnail: React.FC<ThumbnailProps> = (props) => {
-  const { src, width, height, alt, layout } = props
+  const { src, width, height, alt, layout, priority } = props
 
   return (
     <Image
@@ -20,6 +21,7 @@ export const Thumbnail: React.FC<ThumbnailProps> = (props) => {
       layout={layout}
       alt={alt}
       style={{ borderRadius: 8 }}
+      priority={priority}
     />
   )
 }
