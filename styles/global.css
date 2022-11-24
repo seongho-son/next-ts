@@ -1,0 +1,16 @@
+@font-face {
+  font-family: 'Pretendard Variable';
+  font-weight: 45 920;
+  font-style: normal;
+  font-display: swap;
+  src: local('Pretendard Variable'),
+    url('./font/PretendardVariable.woff2') format('woff2-variations');
+}
+
+html,
+body {
+  height: 100%;
+  box-sizing: border-box;
+  font-family: Pretendard Variable;
+  background-color: #141414;
+}

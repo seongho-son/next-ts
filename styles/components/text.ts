@@ -3,6 +3,7 @@ import { theme } from 'styles/theme'
 
 const common = {
   'font-size': theme.size.default,
+  color: '#24273a',
 }
 
 export const BaseText = styled.span`

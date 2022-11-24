@@ -25,7 +25,7 @@ const ButtonMain = styled(Row)`
   padding: 15px 20px;
   border-radius: 50px;
   justify-content: center;
-  color: ${(p) => p.theme.color.white};
+  color: ${(p) => p.theme.color.white1};
   background-color: ${(p) => p.theme.color.primary};
   cursor: pointer;
   :hover {

@@ -15,10 +15,11 @@ const size = {
 }
 
 const color = {
-  white: '#FFFFFF',
-  black: '#141414',
+  white1: '#FFFFFF',
+  black1: '#141414',
+  black2: '#222224',
   primary: '#513DE8',
-  background: '#F2F5FB',
+  background: '#F2F2F2',
   gray: '#D9D9D9',
 }
 
