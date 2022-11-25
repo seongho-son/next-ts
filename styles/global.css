@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Libre+Bodoni:wght@400;500;700&display=swap');
 @font-face {
   font-family: 'Pretendard Variable';
   font-weight: 45 920;
@@ -11,6 +12,5 @@ html,
 body {
   height: 100%;
   box-sizing: border-box;
-  font-family: Pretendard Variable;
   background-color: #141414;
 }

@@ -1,16 +1,17 @@
 import styled from 'styled-components'
-import { Column } from '/styles/components/layout'
+import { Column } from 'styles/components/layout'
 
 export const BackgroundContainer = styled(Column)`
   :hover .backgroundWrapper {
-    opacity: 0.3;
+    opacity: 0.2;
   }
+  background-color: ${(p) => p.theme.color.black1};
 `
 
 export const BackgroundWrapper = styled(Column).attrs(() => ({
   className: 'backgroundWrapper',
 }))`
-  z-index: -1;
+  /* z-index: -1; */
   position: absolute;
   opacity: 0.6;
   transition: 0.5s;

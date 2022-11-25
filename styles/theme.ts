@@ -12,6 +12,7 @@ const size = {
   h3: '1.625rem', // 26px
   h2: '1.875rem', // 30px
   h1: '2.125rem', // 34px
+  header: '2.625rem', // 46px
 }
 
 const color = {

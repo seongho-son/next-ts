@@ -2,13 +2,22 @@ import styled from 'styled-components'
 import { theme } from 'styles/theme'
 
 const common = {
-  'font-size': theme.size.default,
   color: '#24273a',
+  'font-size': theme.size.default,
 }
 
-export const BaseText = styled.span`
+enum FontFamilyType {
+  P = 'Pretendard Variable',
+  L = "'Libre Bodoni', serif",
+}
+
+export const BaseText = styled.span<{
+  fontFamily?: 'P' | 'L'
+}>`
   ${common}
   font-weight: ${(p) => p.theme.weight.regular};
+  font-family: ${(p) =>
+    p.fontFamily ? FontFamilyType[p.fontFamily] : FontFamilyType.P};
 `
 
 export const DescText = styled.p`
@@ -16,6 +25,10 @@ export const DescText = styled.p`
   font-weight: ${(p) => p.theme.weight.regular};
   line-height: 1.8;
   white-space: pre-wrap;
+`
+
+export const HeaderText = styled(BaseText)`
+  font-size: ${(p) => p.theme.size.header};
 `
 
 export const H1Text = styled(BaseText)`

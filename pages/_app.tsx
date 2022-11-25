@@ -6,6 +6,7 @@ import Head from 'next/head'
 import { ThemeProvider } from 'styled-components'
 import { theme } from 'styles/theme'
 import { SWRConfig } from 'swr'
+import { BackgroundImage } from 'styles/components/home/image'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -17,7 +18,12 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <ThemeProvider theme={theme}>
         <SWRConfig value={{ suspense: true }}>
-          <Component {...pageProps} />
+          <BackgroundImage
+            url='/image/black-cover-2.jpeg'
+            style={{ backgroundSize: 'auto' }}
+          >
+            <Component {...pageProps} />
+          </BackgroundImage>
         </SWRConfig>
       </ThemeProvider>
     </>
