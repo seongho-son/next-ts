@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Row } from 'styles/components/layout'
-import { BaseText } from 'styles/components/text'
+import { Row } from 'styles/components/common/layout'
+import { BaseText } from 'styles/components/common/text'
 import { theme } from 'styles/theme'
 
 interface ButtonProps {
@@ -25,7 +25,7 @@ const ButtonMain = styled(Row)`
   padding: 15px 20px;
   border-radius: 50px;
   justify-content: center;
-  color: ${(p) => p.theme.color.white1};
+  color: ${(p) => p.theme.color.white};
   background-color: ${(p) => p.theme.color.primary};
   cursor: pointer;
   :hover {

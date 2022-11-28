@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Column } from 'styles/components/layout'
+import { Column } from 'styles/components/common/layout'
 
 export const BackgroundContainer = styled(Column)`
   :hover .backgroundWrapper {
@@ -21,4 +21,5 @@ export const BackgroundWrapper = styled(Column).attrs(() => ({
 export const BackgroundImage = styled.div<{ url: string }>`
   background-image: url(${(p) => p.url});
   background-size: cover;
+  background-position: center;
 `

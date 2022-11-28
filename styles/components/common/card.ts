@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Column } from 'styles/components/layout'
+import { Column } from 'styles/components/common/layout'
 
 export const ShadowCard = styled(Column)`
   border-radius: 8px;

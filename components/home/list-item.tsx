@@ -5,21 +5,44 @@ import {
   BackgroundImage,
   BackgroundWrapper,
 } from 'styles/components/home/image'
-import { Column } from 'styles/components/layout'
+import { Column } from 'styles/components/common/layout'
+import {
+  BaseText,
+  DescText,
+  H3Text,
+  H5Text,
+} from 'styles/components/common/text'
 import { theme } from 'styles/theme'
 
 interface ListItemProps {
   imageUrl?: string
+  title: string
+  subject: string
+  createdAt: string
 }
 
 const WIDTH = 300
 const IMAGE_HEIGHT = 350
 
-export const ListItem: React.FC<ListItemProps> = ({ imageUrl }) => {
+export const ListItem: React.FC<ListItemProps> = ({
+  imageUrl,
+  title,
+  subject,
+  createdAt,
+}) => {
   return (
     <Main>
       {imageUrl && (
         <BackgroundContainer style={{ height: IMAGE_HEIGHT }}>
+          <Column
+            style={{
+              height: '100%',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            <H5Text style={{ color: theme.color.white }}>Click to post</H5Text>
+          </Column>
           <CoverImageWrapper>
             <CoverImage className='coverImage' url={imageUrl} />
           </CoverImageWrapper>
@@ -27,11 +50,26 @@ export const ListItem: React.FC<ListItemProps> = ({ imageUrl }) => {
       )}
       <Column
         style={{
-          minHeight: 200,
           border: `1px solid ${theme.color.background}`,
-          backgroundColor: theme.color.white1,
+          backgroundColor: theme.color.white,
+          padding: '20px 10px',
+          gap: 10,
         }}
-      />
+      >
+        <Column style={{ gap: 5 }}>
+          <H3Text style={{ fontWeight: theme.weight.bold }}>{title}</H3Text>
+          <DescText style={{ fontSize: theme.size.small }}>{subject}</DescText>
+        </Column>
+        <BaseText
+          style={{
+            fontWeight: theme.weight.bold,
+            fontSize: theme.size.small,
+            color: theme.color.gray4,
+          }}
+        >
+          {createdAt}
+        </BaseText>
+      </Column>
     </Main>
   )
 }
@@ -52,9 +90,9 @@ const Main = styled(Column)`
 `
 
 const CoverImageWrapper = styled(BackgroundWrapper)`
+  opacity: 1;
   width: ${WIDTH}px;
   height: ${IMAGE_HEIGHT}px;
-  opacity: 1;
   overflow: hidden;
   border: 1px solid ${(p) => p.theme.color.background};
 `

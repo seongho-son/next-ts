@@ -1,6 +1,6 @@
 import React from 'react'
-import { Column } from 'styles/components/layout'
-import { Header } from 'components/common/header'
+import { Column } from 'styles/components/common/layout'
+import { Header } from 'components/misc/header'
 
 interface HeaderWithFooterProps {
   children: React.ReactNode

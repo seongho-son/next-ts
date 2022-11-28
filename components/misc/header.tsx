@@ -1,12 +1,13 @@
 import React from 'react'
 import Image from 'next/image'
-import { Column, Media, Row } from 'styles/components/layout'
-import { HeaderText } from 'styles/components/text'
+import { Column, Media, Row } from 'styles/components/common/layout'
+import { HeaderText } from 'styles/components/common/text'
 import { theme } from 'styles/theme'
+import { Dropdown } from 'components/common/dropdown'
 
 export const Header: React.FC = () => {
   return (
-    <Row style={{ justifyContent: 'center' }}>
+    <Row style={{ justifyContent: 'center', zIndex: 1 }}>
       <Column
         style={{
           justifyContent: 'center',
@@ -19,8 +20,32 @@ export const Header: React.FC = () => {
             padding: '20px 0',
           }}
         >
-          <Row style={{ justifyContent: 'space-between' }}>
-            <Row style={{ gap: 15, marginBlockStart: 'auto' }}>
+          <Row
+            style={{
+              justifyContent: 'space-between',
+            }}
+          >
+            <Row
+              style={{
+                marginBlockStart: 'auto',
+              }}
+            >
+              <Dropdown value='Categories' onClick={() => {}} />
+            </Row>
+            <HeaderText
+              fontFamily='L'
+              style={{
+                color: theme.color.white,
+              }}
+            >
+              Nostalgic.
+            </HeaderText>
+            <Row
+              style={{
+                gap: 15,
+                marginBlockStart: 'auto',
+              }}
+            >
               <a
                 href='https://github.com/devshon'
                 target='_blank'
@@ -58,14 +83,6 @@ export const Header: React.FC = () => {
                 />
               </a>
             </Row>
-            <HeaderText
-              fontFamily='L'
-              style={{
-                color: theme.color.white1,
-              }}
-            >
-              Nostalgic.
-            </HeaderText>
           </Row>
         </Media>
       </Column>

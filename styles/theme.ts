@@ -16,12 +16,15 @@ const size = {
 }
 
 const color = {
-  white1: '#FFFFFF',
-  black1: '#141414',
-  black2: '#222224',
   primary: '#513DE8',
+  black1: '#000000',
+  black2: '#24273a',
+  gray1: '#444444',
+  gray2: '#888888',
+  gray3: '#AAAAAA',
+  gray4: '#D9D9D9',
   background: '#F2F2F2',
-  gray: '#D9D9D9',
+  white: '#FFFFFF',
 }
 
 const media = {
