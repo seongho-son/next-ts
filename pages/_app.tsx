@@ -12,16 +12,13 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Nostalgic | life is good</title>
-        <meta name='description' content='life is good' />
-        <link rel='icon' href='/favicon.ico' />
+        <title>Nostalgic - history blog</title>
+        <meta name='description' content='history blog' />
+        <link rel='icon' href='/image/profile.png' />
       </Head>
       <ThemeProvider theme={theme}>
         <SWRConfig value={{ suspense: true }}>
-          <BackgroundImage
-            url='/image/black-cover-2.jpeg'
-            style={{ backgroundSize: 'auto' }}
-          >
+          <BackgroundImage url='/image/black-cover-2.jpeg'>
             <Component {...pageProps} />
           </BackgroundImage>
         </SWRConfig>

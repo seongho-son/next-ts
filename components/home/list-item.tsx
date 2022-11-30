@@ -13,6 +13,7 @@ import {
   H5Text,
 } from 'styles/components/common/text'
 import { theme } from 'styles/theme'
+import Link from 'next/link'
 
 interface ListItemProps {
   imageUrl?: string
@@ -31,46 +32,52 @@ export const ListItem: React.FC<ListItemProps> = ({
   createdAt,
 }) => {
   return (
-    <Main>
-      {imageUrl && (
-        <BackgroundContainer style={{ height: IMAGE_HEIGHT }}>
-          <Column
-            style={{
-              height: '100%',
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}
-          >
-            <H5Text style={{ color: theme.color.white }}>Click to post</H5Text>
-          </Column>
-          <CoverImageWrapper>
-            <CoverImage className='coverImage' url={imageUrl} />
-          </CoverImageWrapper>
-        </BackgroundContainer>
-      )}
-      <Column
-        style={{
-          border: `1px solid ${theme.color.background}`,
-          backgroundColor: theme.color.white,
-          padding: '20px 10px',
-          gap: 10,
-        }}
-      >
-        <Column style={{ gap: 5 }}>
-          <H3Text style={{ fontWeight: theme.weight.bold }}>{title}</H3Text>
-          <DescText style={{ fontSize: theme.size.small }}>{subject}</DescText>
-        </Column>
-        <BaseText
+    <Link href={`/post/1`}>
+      <Main>
+        {imageUrl && (
+          <BackgroundContainer style={{ height: IMAGE_HEIGHT }}>
+            <Column
+              style={{
+                height: '100%',
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}
+            >
+              <H5Text style={{ color: theme.color.white }}>
+                Click to post
+              </H5Text>
+            </Column>
+            <CoverImageWrapper>
+              <CoverImage className='coverImage' url={imageUrl} />
+            </CoverImageWrapper>
+          </BackgroundContainer>
+        )}
+        <Column
           style={{
-            fontWeight: theme.weight.bold,
-            fontSize: theme.size.small,
-            color: theme.color.gray4,
+            border: `1px solid ${theme.color.background}`,
+            backgroundColor: theme.color.white,
+            padding: '20px 10px',
+            gap: 10,
           }}
         >
-          {createdAt}
-        </BaseText>
-      </Column>
-    </Main>
+          <Column style={{ gap: 5 }}>
+            <H3Text style={{ fontWeight: theme.weight.bold }}>{title}</H3Text>
+            <DescText style={{ fontSize: theme.size.small }}>
+              {subject}
+            </DescText>
+          </Column>
+          <BaseText
+            style={{
+              fontWeight: theme.weight.bold,
+              fontSize: theme.size.small,
+              color: theme.color.gray4,
+            }}
+          >
+            {createdAt}
+          </BaseText>
+        </Column>
+      </Main>
+    </Link>
   )
 }
 

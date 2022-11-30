@@ -1,42 +1,33 @@
-import Image from 'next/image'
 import React from 'react'
 import styled from 'styled-components'
-import { Column, Row } from 'styles/components/common/layout'
+import { Row } from 'styles/components/common/layout'
 import { BaseText } from 'styles/components/common/text'
-import { theme as _theme } from 'styles/theme'
-import { MenuExtends } from 'components/common/menu'
+import { theme } from 'styles/theme'
+import { AiOutlineDown } from 'react-icons/ai'
 
 interface DropdownProps {
   value: string
   onClick: () => void
-  theme?: 'dark' | 'light'
+  children: React.ReactNode
 }
 
 export const Dropdown: React.FC<DropdownProps> = ({
   value,
   onClick,
-  theme,
+  children,
 }) => {
-  const isDark = !theme || theme === 'dark'
-
   return (
     <Main onClick={onClick}>
       <BaseText
         style={{
-          fontWeight: _theme.weight.bold,
-          color: isDark ? _theme.color.white : _theme.color.black2,
+          fontWeight: theme.weight.medium,
+          color: theme.color.gray4,
         }}
       >
         {value}
       </BaseText>
-      <Image
-        className='icon'
-        src={`/icon/chevron-up-${isDark ? 'white' : 'gray1'}.svg`}
-        width={18}
-        height={18}
-        alt='down'
-      />
-      <MenuExtends />
+      <AiOutlineDown style={{ color: theme.color.gray4 }} size='14' />
+      <Menu className='menu'>{children}</Menu>
     </Main>
   )
 }
@@ -46,7 +37,7 @@ const Main = styled(Row)`
   gap: 5px;
   align-items: center;
   cursor: pointer;
-  .icon {
+  svg {
     transition: 0.2s;
   }
   .menu {
@@ -55,14 +46,11 @@ const Main = styled(Row)`
   :hover {
     @keyframes comeUpMenu {
       0% {
-        top: 90px;
+        top: 35px;
         opacity: 0;
       }
-      100% {
-        top: 80px;
-      }
     }
-    .icon {
+    svg {
       transform: rotate(180deg);
     }
     .menu {
@@ -70,4 +58,17 @@ const Main = styled(Row)`
       display: flex;
     }
   }
+`
+
+const Menu = styled(Row)`
+  width: 140px;
+  z-index: 100;
+  top: 25px;
+  right: 0px;
+  justify-content: end;
+  position: absolute;
+  padding: 20px;
+  opacity: 0.9;
+  border-radius: 4px;
+  background-color: ${(p) => p.theme.color.black1};
 `

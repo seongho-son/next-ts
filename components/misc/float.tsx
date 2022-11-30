@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import Image from 'next/image'
-import { Row } from 'styles/components/common/layout'
+import { Column } from 'styles/components/common/layout'
+import { AiOutlineArrowUp } from 'react-icons/ai'
+import { theme } from 'styles/theme'
 
 export const Float: React.FC = () => {
   const [scrollY, setScrollY] = useState(0)
@@ -16,7 +17,7 @@ export const Float: React.FC = () => {
 
   return (
     <Main
-      style={{ display: scrollY < 740 ? 'none' : '' }}
+      style={{ display: scrollY < 700 ? 'none' : '' }}
       onClick={() =>
         window.scroll({
           top: 0,
@@ -25,17 +26,12 @@ export const Float: React.FC = () => {
         })
       }
     >
-      <Image
-        src='/icon/arrow-narrow-up-white.svg'
-        width={24}
-        height={24}
-        alt='up'
-      />
+      <AiOutlineArrowUp size='24' style={{ color: theme.color.white }} />
     </Main>
   )
 }
 
-const Main = styled(Row)`
+const Main = styled(Column)`
   width: 55px;
   height: 55px;
   border-radius: 100%;
@@ -45,6 +41,7 @@ const Main = styled(Row)`
   right: 40px;
   bottom: 40px;
   justify-content: center;
+  align-items: center;
   transition: 0.2s;
   box-shadow: 0px 2px 8px 0px #14141485;
   cursor: pointer;

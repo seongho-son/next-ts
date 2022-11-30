@@ -11,7 +11,6 @@ export const BackgroundContainer = styled(Column)`
 export const BackgroundWrapper = styled(Column).attrs(() => ({
   className: 'backgroundWrapper',
 }))`
-  /* z-index: -1; */
   position: absolute;
   opacity: 0.6;
   transition: 0.5s;
