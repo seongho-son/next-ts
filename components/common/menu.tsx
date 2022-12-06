@@ -4,9 +4,7 @@ import { Column, Row } from 'styles/components/common/layout'
 import { BaseText, H5Text } from 'styles/components/common/text'
 import { theme } from 'styles/theme'
 
-interface MenuPropsExtends {}
-
-export const MenuExtends: React.FC<MenuPropsExtends> = () => {
+export const MenuExtends: React.FC = () => {
   return (
     <Main className='menu'>
       <Column>

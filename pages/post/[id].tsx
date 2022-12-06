@@ -6,9 +6,7 @@ import { theme } from 'styles/theme'
 import Image from 'next/image'
 import { BaseText, DescText, HeaderText } from 'styles/components/common/text'
 
-interface PostProps {}
-
-const Post: NextPage<PostProps> = () => {
+const Post: NextPage = () => {
   return (
     <HeaderWithFooter>
       <Column style={{ backgroundColor: theme.color.background }}>
