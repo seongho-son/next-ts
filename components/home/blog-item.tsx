@@ -16,6 +16,7 @@ import { theme } from 'styles/theme'
 import Link from 'next/link'
 
 interface ListItemProps {
+  id: number
   imageUrl?: string
   title: string
   subject: string
@@ -25,14 +26,15 @@ interface ListItemProps {
 const WIDTH = 300
 const IMAGE_HEIGHT = 350
 
-export const ListItem: React.FC<ListItemProps> = ({
+export const BlogItem: React.FC<ListItemProps> = ({
+  id,
   imageUrl,
   title,
   subject,
   createdAt,
 }) => {
   return (
-    <Link href={`/post/1`}>
+    <Link href={`/blog/${id}`} as={`/blog/${title}`}>
       <Main>
         {imageUrl && (
           <BackgroundContainer style={{ height: IMAGE_HEIGHT }}>
@@ -101,7 +103,6 @@ const CoverImageWrapper = styled(BackgroundWrapper)`
   width: ${WIDTH}px;
   height: ${IMAGE_HEIGHT}px;
   overflow: hidden;
-  border: 1px solid ${(p) => p.theme.color.background};
 `
 
 const CoverImage = styled(BackgroundImage)`

@@ -1,20 +1,10 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import { Column } from 'styles/components/common/layout'
-import { Header } from 'components/misc/header'
-import { Footer } from 'components/misc/footer'
+import { Header } from 'components/common/header'
 
-interface HeaderWithFooterProps {
-  children: React.ReactNode
-}
-
-export const HeaderWithFooter: React.FC<HeaderWithFooterProps> = ({
-  children,
-}) => {
-  return (
-    <Column>
-      <Header />
-      {children}
-      <Footer />
-    </Column>
-  )
-}
+export const Frame: React.FC<{ children: ReactNode }> = ({ children }) => (
+  <Column style={{ minHeight: '100vh', paddingBottom: 50 }}>
+    <Header />
+    {children}
+  </Column>
+)

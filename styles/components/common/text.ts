@@ -27,6 +27,10 @@ export const DescText = styled.p`
   white-space: pre-wrap;
 `
 
+export const BoldText = styled(BaseText)`
+  font-weight: ${(p) => p.theme.weight.bold};
+`
+
 export const HeaderText = styled(BaseText)`
   font-size: ${(p) => p.theme.size.header};
 `

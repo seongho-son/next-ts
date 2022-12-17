@@ -1,14 +1,17 @@
 import React from 'react'
 import { NextPage } from 'next'
-import { HeaderWithFooter } from 'components/common/frame'
 import { Column, Media } from 'styles/components/common/layout'
 import { theme } from 'styles/theme'
 import Image from 'next/image'
 import { BaseText, DescText, HeaderText } from 'styles/components/common/text'
+import { Float } from 'components/common/float'
+import { Frame } from 'components/common/frame'
+import { useRouter } from 'next/router'
 
 const Post: NextPage = () => {
+  const router = useRouter()
   return (
-    <HeaderWithFooter>
+    <Frame>
       <Column style={{ backgroundColor: theme.color.background }}>
         <Media>
           <Column style={{ alignItems: 'center', gap: 40, padding: '40px 0' }}>
@@ -54,7 +57,8 @@ const Post: NextPage = () => {
           </Column>
         </Media>
       </Column>
-    </HeaderWithFooter>
+      <Float />
+    </Frame>
   )
 }
 

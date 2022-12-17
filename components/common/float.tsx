@@ -30,7 +30,7 @@ export const Float: React.FC = () => {
       >
         <AiOutlineArrowUp size='24' style={{ color: theme.color.primary }} />
       </Sub>
-      <Main onClick={() => router.push('/create')}>
+      <Main onClick={() => router.push('/blog/upload')}>
         <AiFillEdit size='24' style={{ color: theme.color.white }} />
       </Main>
     </>

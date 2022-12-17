@@ -16,5 +16,6 @@ const useSWRBundle = <T>(url: string, params?: Record<string, any>) => {
   }
 }
 
-export const useBlog = (params: { limit: number }) =>
-  useSWRBundle<Blog[]>(`/blogs`, params)
+export const useBlogs = () => useSWRBundle<Blog[]>(`/blog`)
+
+export const useBlog = (id: number) => useSWRBundle<Blog>(`/blog/${id}`)

@@ -1,9 +1,8 @@
 import dynamic from 'next/dynamic'
 
-const MDEditor = dynamic(import('../misc/md-editor'), { ssr: false })
+const MdEditor = dynamic(import('./md-editor'), { ssr: false })
 
-const Editor: React.FC = () => {
-  return <MDEditor />
-}
-
-export default Editor
+export const Editor: React.FC<{
+  value: string
+  onChange: (e: string) => void
+}> = ({ value, onChange }) => <MdEditor value={value} onChange={onChange} />

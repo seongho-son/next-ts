@@ -12,8 +12,8 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Nostalgic - history blog</title>
-        <meta name='description' content='history blog' />
+        <title>Nostalgic - Every Ones Weekend</title>
+        <meta name='description' content='eow' />
         <link rel='icon' href='/image/profile.png' />
       </Head>
       <ThemeProvider theme={theme}>
