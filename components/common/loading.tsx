@@ -1,12 +1,16 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import styled from 'styled-components'
 import { Column, Row } from 'styles/components/common/layout'
 import { AiOutlineLoading3Quarters } from 'react-icons/ai'
 import { theme } from 'styles/theme'
-import styled from 'styled-components'
 
 export const Loading: React.FC = () => {
+  const [isLoading, setIsLoading] = useState(true)
+  useEffect(() => {
+    setTimeout(() => setIsLoading(false), 1500)
+  }, [])
   return (
-    <Main>
+    <Main style={{ display: isLoading ? '' : 'none' }}>
       <LoadingBar />
       <AiOutlineLoading3Quarters size={50} color={theme.color.white} />
     </Main>
@@ -14,12 +18,14 @@ export const Loading: React.FC = () => {
 }
 
 const Main = styled(Column)`
-  position: absolute;
+  top: 0;
   width: 100%;
   height: 100%;
+  z-index: 1000;
+  position: fixed;
   justify-content: center;
   align-items: center;
-
+  background-color: ${(p) => p.theme.color.black1};
   svg {
     @keyframes Spin {
       0% {
@@ -48,6 +54,6 @@ const LoadingBar = styled(Row)`
   width: 100%;
   height: 5px;
   position: absolute;
-  animation: Progress 3s infinite;
+  animation: Progress 1.5s infinite;
   background-color: ${(p) => p.theme.color.white};
 `

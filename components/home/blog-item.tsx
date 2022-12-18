@@ -14,29 +14,25 @@ import {
 } from 'styles/components/common/text'
 import { theme } from 'styles/theme'
 import Link from 'next/link'
+import { Blog } from 'infra/type'
+import { subjectFormat, thumbnailFormat, titleFormat } from 'utils/format'
+import moment from 'moment'
 
 interface ListItemProps {
-  id: number
-  imageUrl?: string
-  title: string
-  subject: string
-  createdAt: string
+  item: Blog
 }
 
 const WIDTH = 300
 const IMAGE_HEIGHT = 350
 
-export const BlogItem: React.FC<ListItemProps> = ({
-  id,
-  imageUrl,
-  title,
-  subject,
-  createdAt,
-}) => {
+export const BlogItem: React.FC<ListItemProps> = ({ item }) => {
+  const title = titleFormat(item.text)
+  const subject = subjectFormat(item.text)
+  const thumbnail = thumbnailFormat(item.text)
   return (
-    <Link href={`/blog/${id}`} as={`/blog/${title}`}>
+    <Link href={`/blog/${title}?id=${item.id}`}>
       <Main>
-        {imageUrl && (
+        {thumbnail && (
           <BackgroundContainer style={{ height: IMAGE_HEIGHT }}>
             <Column
               style={{
@@ -50,7 +46,7 @@ export const BlogItem: React.FC<ListItemProps> = ({
               </H5Text>
             </Column>
             <CoverImageWrapper>
-              <CoverImage className='coverImage' url={imageUrl} />
+              <CoverImage className='coverImage' url={`/image/${thumbnail}`} />
             </CoverImageWrapper>
           </BackgroundContainer>
         )}
@@ -75,7 +71,7 @@ export const BlogItem: React.FC<ListItemProps> = ({
               color: theme.color.gray4,
             }}
           >
-            {createdAt}
+            {moment(item.createdAt).format('YYYY년 M월 D일')}
           </BaseText>
         </Column>
       </Main>

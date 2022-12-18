@@ -1,12 +1,7 @@
-export interface IdName {
+export interface Blog {
   id: number
-  name: string
-}
-
-export interface Blog extends IdName {
-  subject: string
-  content: string
+  text: string
   createdAt: string
-  updatedAt: string
-  deletedAt: string
+  updatedAt?: string
+  deletedAt?: string
 }

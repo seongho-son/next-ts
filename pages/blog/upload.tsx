@@ -8,26 +8,14 @@ import { Button } from 'styles/components/common/button'
 import { postFetch } from 'api/fetcher'
 
 const Upload: NextPage = () => {
-  const [name, setName] = useState('')
-  const [subject, setSubject] = useState('')
-  const [content, setContent] = useState('')
-  const upload = () => postFetch('/blog', { name, subject, content })
+  const [text, setText] = useState('')
+  const upload = () => postFetch('/blog', { text })
 
   return (
     <Frame>
       <Media>
-        <Column style={{ gap: 50 }}>
-          <Input
-            placeholder='Title'
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-          <Input
-            placeholder='Subject'
-            value={subject}
-            onChange={(e) => setSubject(e.target.value)}
-          />
-          <Editor value={content} onChange={(e) => setContent(e)} />
+        <Column style={{ gap: 50, paddingBottom: 50 }}>
+          <Editor value={text} onChange={(e) => setText(e)} />
           <Row style={{ justifyContent: 'center' }}>
             <Button style={{ width: 300 }} onClick={() => upload()}>
               Upload
