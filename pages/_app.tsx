@@ -18,7 +18,10 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <ThemeProvider theme={theme}>
         <SWRConfig value={{ suspense: true }}>
-          <BackgroundImage url='/image/black-cover-2.jpeg'>
+          <BackgroundImage
+            url='/image/black-cover-1.jpeg'
+            style={{ backgroundSize: 'contain' }}
+          >
             <Component {...pageProps} />
           </BackgroundImage>
         </SWRConfig>
