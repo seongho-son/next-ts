@@ -5,7 +5,7 @@ import { Loading } from 'components/common/loading'
 
 export const Frame: React.FC<{ children: ReactNode }> = ({ children }) => (
   <>
-    <Loading />
+    {/* <Loading /> */}
     <Column style={{ minHeight: '100vh' }}>
       <Header />
       {children}

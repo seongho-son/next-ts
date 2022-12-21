@@ -10,7 +10,7 @@ export const Loading: React.FC = () => {
     setTimeout(() => setIsLoading(false), 1500)
   }, [])
   return (
-    <Main style={{ display: isLoading ? '' : 'none' }}>
+    <Main style={{ display: isLoading ? 'flex' : 'none' }}>
       <LoadingBar />
       <AiOutlineLoading3Quarters size={50} color={theme.color.white} />
     </Main>

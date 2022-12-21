@@ -7,6 +7,7 @@ import { theme } from 'styles/theme'
 import { Float } from 'components/common/float'
 import { Frame } from 'components/common/frame'
 import { BlogList } from 'components/home/blog-list'
+import { Loading } from 'components/common/loading'
 
 const Home: NextPage = () => {
   return (
@@ -43,7 +44,7 @@ const Home: NextPage = () => {
         }}
       >
         <Media>
-          <Suspense>
+          <Suspense fallback={<Loading />}>
             <BlogList />
           </Suspense>
         </Media>
